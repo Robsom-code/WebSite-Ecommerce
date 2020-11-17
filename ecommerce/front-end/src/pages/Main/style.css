@@ -1,0 +1,126 @@
+.product-list{
+    max-width: 800px;
+    margin: 80px auto 0; 
+    padding: 0 20px;
+    
+}
+
+
+.product-list article{
+    
+    height: 100px;
+    width: 130px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 70px;
+    padding-left: 50px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+    
+
+    
+}
+.product-list article h1{
+    margin-top: 60px;
+    margin-bottom: -4px; 
+    
+}
+
+.product-list p{
+
+    padding-bottom: 15px;
+    font-size:25px; 
+    color: rgb(3, 2, 2);
+    display: flex;
+    margin-top: auto;
+    margin-bottom: -10px;
+    
+    
+    
+}
+
+.product-list article a{
+    width: 140px;
+    height: 42px;
+    border-radius: 5px;
+    border: 2px solid rgb(16, 20, 214);
+    background-color: none;
+    color: #1421db;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+
+    transition: all 0.2s;
+
+}
+
+.product-list article a:hover{
+    background: #030fc2;
+    color: #fff;
+}
+.product-list .actions .first[disabled]{
+    background-color: rgb(19, 141, 255);
+    color: #fff;
+    
+}
+.product-list .actions{
+    display: flex;
+    margin-bottom: 150px;
+    width: 100%;
+    padding: 0 150px;
+    
+  
+}
+.product-list .actions .paginates button{ 
+    margin-top: 30px; 
+    background-color: rgb(238, 238, 238);
+    color: black;
+    outline-style: none;
+    
+}
+.product-list .actions .paginates button:hover{ 
+    margin-top: 30px; 
+    background-color: rgb(19, 141, 255);
+    color: #fff;
+    transition: all 0.1s;
+    
+}
+
+.product-list .actions button{
+    margin-top: 30px;
+    margin-inline-start: 15px;
+    margin-inline-end: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    background: #09026e;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.product-list .actions .paginates .page{
+    background-color: rgb(19, 141, 255);
+    color: #fff;
+}
+
+.product-list .actions button[disabled]{
+    opacity: 0.5;
+    cursor:default;
+}
+.product-list .actions .first[disabled]{
+    opacity: 100%;
+    
+}
