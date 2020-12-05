@@ -1,7 +1,12 @@
-import React, {Component} from 'react';
+import React, {Component, useState} from 'react';
 import api from "../../services/api";
 import { Link } from "react-router-dom";
 import './style.css';
+import Actions from "./actions";
+import { findByDisplayValue, findByTestId } from '@testing-library/react';
+
+
+
 
 export default class Main extends Component{
     state = {
@@ -9,6 +14,7 @@ export default class Main extends Component{
         productInfo: {},
         page: 1,
     }
+    
 
     componentDidMount(){
         this.loadProducts();
@@ -34,7 +40,7 @@ export default class Main extends Component{
         this.loadProducts(pageNumber);
     };
 
-
+    
     nextPage = () =>{
         const {page, productInfo} = this.state;
         if (page === productInfo.pages) return;
@@ -69,23 +75,37 @@ export default class Main extends Component{
         this.loadProducts(pageNumber);
 
     }
+    
 
-
-
+    
 
     render(){
         const {produto, page, productInfo} = this.state;
 
-     return(
-    <div className="product-list">{produto.map(produto =>(
-        <article key= {produto._id}>
-            <h1>{produto.produto}</h1>
-            <p>$:{produto.valor}</p>
 
+        
+        
+     return(
+
+         <div className="product-list">{produto.map(produto =>(
+             
+         <article key= {produto._id}>
+            <h1>{produto.produto}</h1>
+            <p>$:{produto.valor}</p>  
+
+            
             <Link to={`/products/${produto._id}`}>Acessar</Link>
+            
+            <Actions/>
+
+
+            
+               
+            
         </article>
         ))}
-        <div className= "actions">
+        {/* botoes da paginação */}
+        <div className= "paginas">
 
             <button disabled= {page === 1} onClick={this.prevPage}>Anterior</button>
             <div className = "paginates">
@@ -99,8 +119,10 @@ export default class Main extends Component{
             
             
         </div>   
+
          
             </div>
+            
     
      )}
 }
