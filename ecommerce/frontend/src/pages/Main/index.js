@@ -1,48 +1,49 @@
-import React, {Component, useState} from 'react';
+import React, { Component} from 'react';
 import api from "../../services/api";
 import { Link } from "react-router-dom";
 import './style.css';
 import Actions from "./actions";
-import { findByDisplayValue, findByTestId } from '@testing-library/react';
 
 
 
 
-export default class Main extends Component{
+export default class Main extends Component {
     state = {
         produto: [],
         productInfo: {},
         page: 1,
     }
+
+
     
 
-    componentDidMount(){
+    componentDidMount() {
         this.loadProducts();
     }
 
 
-    loadProducts = async (page = 1)=>{
+    loadProducts = async (page = 1) => {
         const response = await api.get(`/products?page=${page}`);
 
-        const {docs, ...productInfo} = response.data;
+        const { docs, ...productInfo } = response.data;
 
-        this.setState({produto: docs, productInfo, page});
+        this.setState({ produto: docs, productInfo, page });
     }
 
 
-    prevPage = () =>{
-        const {page, productInfo} = this.state;
+    prevPage = () => {
+        const { page } = this.state;
 
-        if (page ===1 ) return;
+        if (page === 1) return;
 
-        const pageNumber = page -1;
+        const pageNumber = page - 1;
 
         this.loadProducts(pageNumber);
     };
 
-    
-    nextPage = () =>{
-        const {page, productInfo} = this.state;
+
+    nextPage = () => {
+        const { page, productInfo } = this.state;
         if (page === productInfo.pages) return;
 
         const pageNumber = page + 1;
@@ -50,81 +51,81 @@ export default class Main extends Component{
         this.loadProducts(pageNumber);
     };
 
-    lastPage = () =>{
-        const{page, productInfo} = this.state;
+    lastPage = () => {
+        const {  productInfo } = this.state;
 
         const pageNumber = productInfo.pages;
 
         this.loadProducts(pageNumber);
     }
-    firstPage = () =>{
-        const{page, productInfo} = this.state;
-        if (page ===1 ) return;
+    firstPage = () => {
+        const { page} = this.state;
+        if (page === 1) return;
 
         const pageNumber = 1;
 
         this.loadProducts(pageNumber);
     }
-    midlePage = ()=>{
-        const{page, productInfo} = this.state;
-        
-        if(page > 1) return;
+    midlePage = () => {
+        const { page } = this.state;
+
+        if (page > 1) return;
 
         const pageNumber = page + 1;
-        
+
         this.loadProducts(pageNumber);
 
     }
-    
 
-    
-
-    render(){
-        const {produto, page, productInfo} = this.state;
-
-
+ 
+    render() {
         
         
-     return(
+            const { produto, page, productInfo } = this.state;
+        return (
 
-         <div className="product-list">{produto.map(produto =>(
-             
-         <article key= {produto._id}>
-            <h1>{produto.produto}</h1>
-            <p>$:{produto.valor}</p>  
+            <div className="product-list">{produto.map(produto => (
 
-            
-            <Link to={`/products/${produto._id}`}>Acessar</Link>
-            
-            <Actions/>
+                <article key={produto._id} >
+                    <h1>{produto.produto}</h1>
+                    <p>$:{produto.valor}</p>
+                    <Actions key={produto._id} product ={produto}/>
+                    <Link to={`/products/${produto._id}`}>Acessar</Link>
+                    
+                    
+                    
 
 
-            
+                </article>
+            ))}
                
-            
-        </article>
-        ))}
-        {/* botoes da paginação */}
-        <div className= "paginas">
+              
 
-            <button disabled= {page === 1} onClick={this.prevPage}>Anterior</button>
-            <div className = "paginates">
-                <button className = "first" onClick={this.firstPage} disabled = {page === 1}>1</button>
-                <button className = "early" hidden = {page === 1 || page ===2 } onClick={this.prevPage}>{page - 1}</button>
-                <button className = "page"  hidden = {page === 1} >{page}</button>
-                <button className = "next" hidden = {page === productInfo.pages} onClick={this.nextPage}>{page + 1}</button>
-                <button onClick={this.lastPage} hidden = {page == productInfo.pages || page == productInfo.pages - 1 } >{productInfo.pages}</button>
-            </div>   
-            <button disabled={page === productInfo.pages} onClick={this.nextPage}>Próximo</button>
-            
-            
-        </div>   
 
-         
+                {/* botoes da paginação */}
+                <div className="paginas">
+
+                    <button disabled={page === 1} onClick={this.prevPage}>Anterior</button>
+                    <div className="paginates">
+
+                        <button className="first" onClick={this.firstPage} disabled={page === 1}>1</button>
+                        <button className="early" hidden={page === 1 || page === 2} onClick={this.prevPage}>{page - 1}</button>
+                        <button className="page" hidden={page === 1} >{page}</button>
+                        <button className="next" hidden={page === productInfo.pages} onClick={this.nextPage}>{page + 1}</button>
+                        <button onClick={this.lastPage} hidden={page === productInfo.pages || page === productInfo.pages - 1} >{productInfo.pages}</button>
+                    </div>
+                    <button disabled={page === productInfo.pages} onClick={this.nextPage}>Próximo</button>
+
+
+                </div>
+
+
             </div>
-            
-    
-     )}
+
+
+        )
+    }
 }
+
 
 

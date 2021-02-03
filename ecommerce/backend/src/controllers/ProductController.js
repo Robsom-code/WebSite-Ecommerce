@@ -4,6 +4,7 @@ const requireDIr = require('require-dir');
 
 
 
+
 const Product = mongoose.model("Product");
 
 module.exports = {
@@ -34,5 +35,8 @@ module.exports = {
         await Product.findByIdAndRemove(req.params.id);
         return res.send("sucesso");
         
-    }
+    },
+    
+    
+    
 };

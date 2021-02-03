@@ -20,7 +20,7 @@ export default class Product extends Component{
             <div className = "product-info">
                 <h1>{produto.produto}</h1>
                 <p>{produto.description}</p>
-
+                <p>{produto._id}</p>
                 <h3>Preço R$:{produto.valor}</h3>
         
                 

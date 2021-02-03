@@ -13,9 +13,10 @@ const ProductSchema = new mongoose.Schema({
         required: true,
     },
     valor:{
-        type:String,
+        type:Number,
         require:true,
     },
+    
 
 });
 ProductSchema.plugin(mongoosePaginate);

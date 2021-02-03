@@ -10,12 +10,22 @@ import * as serviceWorker from './serviceWorker';
 
 
 
+// import ProductsContextProvider from './components/contexts/ProductsContext';
+import CartContextProvider from './components/contexts/CartContext';
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App/>
+    
+      <CartContextProvider>
+      <App/>
+      </CartContextProvider>
+    
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
