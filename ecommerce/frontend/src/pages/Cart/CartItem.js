@@ -25,7 +25,7 @@ const CartItem = ({product}) => {
             </div>
             <div className="col-sm-4 p-2 text-right">
                  <button 
-                 onClick={() => increase(product)}
+                 onClick={() => increase(product) || window.location.reload()}
                  className="btn btn-primary btn-sm mr-2 mb-1">
                      <PlusCircleIcon width={"20px"}/>
                  </button>

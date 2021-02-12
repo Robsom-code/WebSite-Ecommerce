@@ -26,7 +26,7 @@ function Actions({product}) {
             {
                     isInCart(product) && 
                     <button 
-                    onClick={() => increase(product)} 
+                    onClick={() => increase(product)  } 
                     className="btn btn-outline-primary btn-sm">Add more</button>
                 }
 
