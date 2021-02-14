@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import Modal from '../../components/Modal/Modal';
+// import Modal from '../../components/Modal/Modal';
 import {CartContext} from '../../components/contexts/CartContext';
 import './style.css';
 
@@ -16,30 +16,30 @@ function Actions({product}) {
 
     return (
         <div className="actions">
-            <button className="add" onClick={() => setIsModalVisible(true)}>Adicionar ao Carrinho</button>
+            {/* <button className="add" onClick={() => setIsModalVisible(true)}>Adicionar ao Carrinho</button>
             {isModalVisible ? <h1><Modal onClose={() => setIsModalVisible(false)}>
-                <h2>Teste</h2></Modal></h1> : null}
+                <h2>Teste</h2></Modal></h1> : null} */}
 
-            <div className = "text-right">   
+             
                     
             
-            {
+                {
                     isInCart(product) && 
-                    <button 
-                    onClick={() => increase(product)  } 
-                    className="btn btn-outline-primary btn-sm">Add more</button>
+                    <button className="btn2"
+                    onClick={() => increase(product) || window.location.reload() } 
+                    className="btn btn-outline-primary btn-sm">Adicionar mais</button>
                 }
 
                 {
                     !isInCart(product) && 
                     <button 
-                    onClick={() => addProduct(product)}
-                    className="btn btn-primary btn-sm">Add to cart</button>
+                    onClick={() => addProduct(product) || window.location.reload()}
+                    className="btn btn-primary btn-sm">Adicionar ao Carrinho</button>
                 }
 
             </div>    
 
-        </div>
+        
     )
 }
 export default Actions;
