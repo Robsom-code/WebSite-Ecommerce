@@ -1,7 +1,9 @@
 .product-list{
-    max-width: 800px;
-    margin: 80px auto 0; 
+    width: 800px;
+    margin: 85px 200px 0; 
     padding: 0 20px;
+    margin-left: 230px;
+    overflow-x: hidden;
     
 }
 
@@ -186,9 +188,19 @@
     border: none;
     border-radius: 6px;
     font-size: 16px;
+    outline: none;
 }
 .actions button:hover{
     background-color: rgb(4, 97, 4);
+}
+.actions button:active{
+    background-color: rgb(2, 68, 2);
+    position: relative;
+	top: 1px;
+	left: 1px;
+    border-color: #000 #999 #999 #000; 
+
+		
 }
 
 

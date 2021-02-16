@@ -33,7 +33,7 @@ export default class Product extends Component{
                 <div className = "b-t-1">
                 
                 <h2>Por R$:{produto.valor}</h2>
-                <a className= "comprar"  href="/cart" >Comprar</a>
+                
                 <Actions className="btn"  product = {produto._id} product = {produto} />
                 
                 <div className="CEP">

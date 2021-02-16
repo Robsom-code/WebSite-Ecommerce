@@ -12,17 +12,16 @@ import * as serviceWorker from './serviceWorker';
 
 // import ProductsContextProvider from './components/contexts/ProductsContext';
 import CartContextProvider from './components/contexts/CartContext';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    
+  
+    <HelmetProvider>
       <CartContextProvider>
       <App/>
       </CartContextProvider>
-    
-    
-  </React.StrictMode>,
+    </HelmetProvider>,
   document.getElementById('root')
 );
 

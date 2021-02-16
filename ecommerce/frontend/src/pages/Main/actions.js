@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import {CartContext} from '../../components/contexts/CartContext';
 import './style.css';
 
+
 function Actions({product}) {
 
     const {addProduct, cartItems, increase} = useContext(CartContext);
@@ -20,23 +21,35 @@ function Actions({product}) {
             {isModalVisible ? <h1><Modal onClose={() => setIsModalVisible(false)}>
                 <h2>Teste</h2></Modal></h1> : null} */}
 
-             
-                    
-            
+
+                <div className="comprar">
+
+                    { 
+                    !isInCart(product) && 
+                    <a 
+                    onClick={() => addProduct(product) } href="/cart"
+                    className="btnc">Comprar</a>
+                    }
+
+                    {
+                    isInCart(product) && 
+                    <a  href="/cart" className="btnc"  >Comprar</a>
+                    }
+
+                </div>
                 {
                     isInCart(product) && 
                     <button className="btn2"
-                    onClick={() => increase(product) || window.location.reload() } 
+                    onClick={() => increase(product) } 
                     className="btn btn-outline-primary btn-sm">Adicionar mais</button>
                 }
 
                 {
                     !isInCart(product) && 
                     <button 
-                    onClick={() => addProduct(product) || window.location.reload()}
+                    onClick={() => addProduct(product) }
                     className="btn btn-primary btn-sm">Adicionar ao Carrinho</button>
                 }
-
             </div>    
 
         
