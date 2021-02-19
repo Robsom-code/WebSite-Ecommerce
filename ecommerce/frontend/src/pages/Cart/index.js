@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-
+import'./style.css';
 
 import CartProducts from './CartProduct';
 import { CartContext } from '../../components/contexts/CartContext'
@@ -13,24 +13,24 @@ const Cart = () => {
     
     return ( 
 
-            <div >
-                <div className="text-center mt-5">
+            <div className = "all-grid">
+                <div className="presentation">
                     <h1>Cart</h1>
                     <p>This is the Cart Page.</p>
                 </div>
 
-                <div className="row no-gutters justify-content-center">
-                    <div className="col-sm-9 p-3">
+                <div className="ensure">
+                    <div className="inner">
                         {
                             cartItems.length > 0 ?
                             <CartProducts/> :
-                            <div className="p-3 text-center text-muted">
+                            <div className="empty">
                                 Your cart is empty
                             </div>
                         }
 
                         { checkout && 
-                            <div className="p-3 text-center text-success">
+                            <div className="checkout">
                                 <p>Checkout successfull</p>
                                 <Link to="/" className="btn btn-outline-success btn-sm">BUY MORE</Link>
                             </div>
@@ -38,15 +38,15 @@ const Cart = () => {
                     </div>
                     {
                         cartItems.length > 0 && 
-                        <div className="col-sm-3 p-3">
-                            <div className="card card-body">
-                                <p className="mb-1">Total Items</p>
-                                <h4 className=" mb-3 txt-right">{itemCount}</h4>
-                                <p className="mb-1">Total Payment</p>
-                                <h3 className="m-0 txt-right">{total}</h3>
+                        <div className="total-box">
+                            <div className="card">
+                                <p className="tot-i">Total Items</p>
+                                <h4 className=" mb-2">{itemCount}</h4>
+                                <p className="tot-i">Total Payment</p>
+                                <h3 className="mb-2">R$:{total}</h3>
                                 <hr className="my-4"/>
-                                <div className="text-center">
-                                    <button type="button" className="btn btn-primary mb-2" onClick={handleCheckout}>CHECKOUT</button>
+                                <div className="options">
+                                    <button type="button" className="btn btn-primary " onClick={handleCheckout}>CHECKOUT</button>
                                     <button type="button" className="btn btn-outlineprimary btn-sm" onClick={clearCart}>CLEAR</button>
                                 </div>
 

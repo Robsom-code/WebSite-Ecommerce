@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { PlusCircleIcon, MinusCircleIcon, TrashIcon } from '../../components/icons'
-
+import'./style.css';
 import {CartContext} from '../../components/contexts/CartContext';
 
 
@@ -10,32 +10,30 @@ const CartItem = ({product}) => {
     const { increase, decrease, removeProduct } = useContext(CartContext);
 
     return ( 
-        <div className="row no-gutters py-2">
-            <div className="col-sm-2 p-2">
-                <p
-                alt={product.produto}/>
+        <div className="product-grid">
+            <div className="p-img">
+            <img className="img-block" src={product.img} alt= {product.produto} ></img>
             </div>
-            <div className="col-sm-4 p-2">
+            <div className="p-details">
                 <h5 className="mb-1">{product.produto}</h5>
-                <p className="mb-1">Price: {(product.valor)} </p>
+                <p className="mb-2">Price: {(product.valor)} </p>
                 
             </div>
-            <div className="col-sm-2 p-2 text-center ">
-                 <p className="mb-0">Qty: {product.quantity}</p>
+            <div className="qnty ">
+                 <p className="qnty_inner">Qty: {product.quantity}</p>
             </div>
-            <div className="col-sm-4 p-2 text-right">
+            <div className="btn">
                  <button 
                  onClick={() => increase(product)}
-                 className="btn btn-primary btn-sm mr-2 mb-1">
-                     <PlusCircleIcon width={"20px"}/>
+                 className="plus">
                  </button>
 
                  {
                      product.quantity > 1 &&
                      <button
                     onClick={() => decrease(product)}
-                    className="btn btn-danger btn-sm mb-1">
-                        <MinusCircleIcon width={"20px"}/>
+                    className="minus">
+                        
                     </button>
                  }
 
@@ -43,7 +41,7 @@ const CartItem = ({product}) => {
                      product.quantity === 1 &&
                      <button
                     onClick={() => removeProduct(product)}
-                    className="btn btn-danger btn-sm mb-1">
+                    className="trash">
                         <TrashIcon width={"20px"}/>
                     </button>
                  }

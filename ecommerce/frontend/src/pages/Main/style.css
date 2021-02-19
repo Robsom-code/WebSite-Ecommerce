@@ -196,10 +196,8 @@
 .actions button:active{
     background-color: rgb(2, 68, 2);
     position: relative;
-	top: 1px;
-	left: 1px;
-    border-color: #000 #999 #999 #000; 
-
+	
+   
 		
 }
 

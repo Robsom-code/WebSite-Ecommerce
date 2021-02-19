@@ -89,7 +89,7 @@ export default class Main extends Component {
                 <article key={produto._id} >
                     
                      
-                <img className="img-product" src={produto.img} ></img>
+                <img className="img-product" src={produto.img} alt={produto.produto} ></img>
                     
 
                 <h3>{produto.produto}</h3>
