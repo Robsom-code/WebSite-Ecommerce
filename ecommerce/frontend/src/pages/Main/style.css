@@ -1,9 +1,59 @@
-.product-list{
-    width: 800px;
-    margin: 85px 200px 0; 
-    padding: 0 20px;
-    margin-left: 230px;
+@import "~react-image-gallery/styles/css/image-gallery.css";
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
     overflow-x: hidden;
+    
+    
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 50px;
+
+}
+
+.image-gallery{
+    
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    display: inline-block;
+    
+    margin: 0; 
+    text-align: center;
+    margin-top: 120px;
+
+    
+}
+.image-gallery-content .image-gallery-slide .image-gallery-image {
+    
+    overflow: hidden;
+    
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    
+    
+}
+
+
+.main .product-list{
+    
+    width: 1400px;
+    
+    min-height: 900px;
+    margin-top: 600px;
+    
+    
     
 }
 
@@ -18,8 +68,8 @@
     float: left;
     margin-top: 30px;
     margin-bottom: 50px;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 15px;
+    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,28 +172,32 @@
     background: green;
     color: black;
 }
-.product-list .paginas .first[disabled]{
+.paginas .first[disabled]{
     background-color: rgb(19, 141, 255);
     color: #fff;
     
 }
-.product-list .paginas{
+ .paginas{
     display: flex;
-    margin-bottom: 150px;
+    position: absolute;
+    margin-top: 900px;
    
     width: 100%;
-    padding: 0 150px;
+    
+
+    
+    justify-content: center;
     
   
 }
-.product-list .paginas .paginates button{ 
+.paginas .paginates button{ 
     margin-top: 30px; 
     background-color: rgb(238, 238, 238);
     color: black;
     outline-style: none;
     
 }
-.product-list .paginas .paginates button:hover{ 
+.paginas .paginates button:hover{ 
     margin-top: 30px; 
     background-color: rgb(19, 141, 255);
     color: #fff;
@@ -151,7 +205,7 @@
     
 }
 
-.product-list .paginas button{
+.paginas button{
     margin-top: 30px;
     margin-inline-start: 15px;
     margin-inline-end: 15px;
@@ -165,17 +219,15 @@
     cursor: pointer;
 }
 
-
-.product-list .paginas .paginates .page{
+.paginas .paginates .page{
     background-color: rgb(19, 141, 255);
     color: #fff;
 }
 
-.product-list .paginas button[disabled]{
+.paginas button[disabled]{
     opacity: 0.5;
     cursor:default;
-}
-.product-list .paginas .first[disabled]{
+}.paginas .first[disabled]{
     opacity: 100%;
     
 }

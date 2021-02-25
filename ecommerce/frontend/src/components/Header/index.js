@@ -13,14 +13,14 @@ function Header() {
     const {itemCount} = useContext(CartContext);
     return (
 
-        <div>
+        
             <header id="main-header">E-Commerce
             
             <a href="/cart" >Carrinho ({itemCount})</a>
 
 
             </header>
-        </div>
+        
     );
 
 

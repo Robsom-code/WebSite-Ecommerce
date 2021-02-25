@@ -2,8 +2,8 @@ import React, { Component} from 'react';
 import api from "../../services/api";
 import { Link } from "react-router-dom";
 import './style.css';
-import Actions from "./actions";
 
+import ImageGallery from 'react-image-gallery';
 
 
 
@@ -82,7 +82,40 @@ export default class Main extends Component {
         
         
             const { produto, page, productInfo } = this.state;
+
+            const images = [
+                {
+                  original: 'https://cdn.pixabay.com/photo/2016/05/27/08/51/mobile-phone-1419275_960_720.jpg',
+                 
+                },
+                {
+                  original: 'https://cdn.pixabay.com/photo/2016/09/22/10/44/banner-1686943_960_720.jpg',
+                 
+                },
+                {
+                  original: 'https://cdn.pixabay.com/photo/2017/10/03/17/53/nature-2813487_960_720.jpg',
+                  
+                },
+                {
+                    original: 'https://ik.imagekit.io/angiogyn/wp-content/uploads/2020/05/AconselhamentoOncogen%C3%A9tico-960x300.jpg' ,
+                }
+              ];
+
+
         return (
+        <div className="main">
+
+            
+            <ImageGallery items={images}
+             showThumbnails={false}
+             autoPlay={true} 
+             showPlayButton={false}
+             showFullscreenButton={false}
+             slideDuration={1500}
+             slideInterval={10000} 
+              />
+             
+            
 
             <div className="product-list">{produto.map(produto => (
 
@@ -106,10 +139,10 @@ export default class Main extends Component {
             ))}
                
               
-
+            </div>
 
                 {/* botoes da paginação */}
-                <div className="paginas">
+            <div className="paginas">
 
                     <button disabled={page === 1} onClick={this.prevPage}>Anterior</button>
                     <div className="paginates">
@@ -126,8 +159,8 @@ export default class Main extends Component {
                 </div>
 
 
+                
             </div>
-
 
         )
     }

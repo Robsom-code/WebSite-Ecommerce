@@ -13,7 +13,7 @@ module.exports = {
      async index(req,res){
 
         const{page = 1} = req.query;
-        const product = await Product.paginate({}, {page, limit: 6});
+        const product = await Product.paginate({}, {page, limit: 10});
     
         return res.json(product);
     },
@@ -35,6 +35,11 @@ module.exports = {
         await Product.findByIdAndRemove(req.params.id);
         return res.send("sucesso");
         
+    },
+    async apagar(req, res){
+        await Product.remove();
+
+        return res.send("sucesso");
     },
     
     

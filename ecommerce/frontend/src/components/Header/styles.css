@@ -1,16 +1,18 @@
 header#main-header{
-    width: 100%;
-    height: 60px;
-    background: #09acd4;
-    font-size: 20px;
+    background-color: black;
+    color: #DDD;
     
-    color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Comic Sans MS, Comic Sans, cursive;
-    margin-left: -8px;
-    padding-right: 16px;
-    margin-top: -8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5050;
+    
+    height: 50px;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    
+   
+    
+    
 
 }
