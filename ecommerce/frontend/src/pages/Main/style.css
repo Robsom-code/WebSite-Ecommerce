@@ -1,6 +1,6 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 .main{
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     
@@ -12,9 +12,13 @@
     position: absolute;
     top: 0;
     left: 0;
+    height: initial;
     width: 100%;
     margin-top: 50px;
-
+    
+    padding-bottom: 150px;
+    margin-top: 200px;
+    align-items: center;
 }
 
 .image-gallery{
@@ -47,11 +51,16 @@
 
 
 .main .product-list{
-    
-    width: 1400px;
-    
-    min-height: 900px;
+   
+    width: 100%;
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px 250px;
+    grid-template-rows: auto 370px auto 370px auto;
+    height: 600px;
     margin-top: 600px;
+    
+    justify-content: center;
+    align-items: center;
     
     
     
@@ -68,7 +77,7 @@
     float: left;
     margin-top: 30px;
     margin-bottom: 50px;
-    margin-left: 15px;
+    margin-left: 10px;
     
     display: flex;
     align-items: center;
@@ -94,6 +103,10 @@
     
     
 
+}
+.product-list img{
+    justify-content: center;
+    margin-top: 2px;
 }
 
 .product-list p{
@@ -178,9 +191,11 @@
     
 }
  .paginas{
-    display: flex;
+    display: inline-flex;
+    
     position: absolute;
-    margin-top: 900px;
+    
+    
    
     width: 100%;
     
@@ -191,14 +206,14 @@
   
 }
 .paginas .paginates button{ 
-    margin-top: 30px; 
+    
     background-color: rgb(238, 238, 238);
     color: black;
     outline-style: none;
     
 }
 .paginas .paginates button:hover{ 
-    margin-top: 30px; 
+    
     background-color: rgb(19, 141, 255);
     color: #fff;
     transition: all 0.1s;
@@ -206,12 +221,12 @@
 }
 
 .paginas button{
-    margin-top: 30px;
+    
     margin-inline-start: 15px;
     margin-inline-end: 15px;
     padding: 10px;
     border-radius: 5px;
-    border: 0;
+    border: none;
     background: #09026e;
     color: #fff;
     font-size: 16px;
@@ -247,14 +262,79 @@
 }
 .actions button:active{
     background-color: rgb(2, 68, 2);
-    position: relative;
-	
-   
+    
 		
 }
 
 
+.nav_inner{
+    float:right;
+    margin-right: 50px;
+}
 
+
+.navBar{
+    
+    position: fixed;
+    float:right;
+    opacity: 100%;
+    background-color: rgb(224, 226, 255);
+    padding: 10px;
+    width: 100%;
+    z-index: 5050;
+    margin-top: -130px;
+    
+}
+
+.navBar a{
+    margin-left: 30px;
+    font-family: "Nunito Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    
+}
+.navBar .login a{
+    margin-left: 15px; 
+}
+.navBar .login .cad{
+    background-color: rgb(201, 112, 112);
+    margin-left: 10px;
+}
+
+
+.navBar .spanBusca img{
+    
+    position: absolute;
+    background-color: white;
+    padding: 7px;
+    width: 20px;
+    margin-left: -30px;
+    margin-top: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.navBar .login a{
+    color: white;
+    background-color: rgb(112, 112, 201);
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
+.navBar .txtBusca{
+    margin-left: 10px;
+    background-color: white;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    height:32px;
+    width:440px;
+}
 
 
 

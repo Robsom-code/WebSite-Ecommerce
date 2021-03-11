@@ -24,9 +24,11 @@ export default class Product extends Component{
 
                 <h1 >{produto.produto}</h1>
 
-                <img className="img-product" src={produto.img} ></img>
-
                 <p>Descrição: {produto.description}</p>
+
+                <img className="img-product" src={produto.img} alt={produto.img} ></img>
+
+                
                     
                 </div>
                 

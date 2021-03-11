@@ -104,6 +104,31 @@ export default class Main extends Component {
 
         return (
         <div className="main">
+            <nav className="navBar">
+                <span className="nav_inner">
+                <a href="/" >Home</a>
+                <a href="/">About</a>
+                <a href="/">Contact us</a>
+
+                <span className="spanBusca">
+
+                <input className="txtBusca" placeholder="Procurar Produto"/>
+                <a className="submit">
+                <img src="https://www.flaticon.com/svg/vstatic/svg/25/25313.svg?token=exp=1615399387~hmac=c5641347ee6e7c9aa8add83c64939d23"  alt="buscar"/>
+
+                </a>
+                
+                </span>
+
+                <span className="login">
+
+                <a id="entrar" href="/">Entrar</a>
+                <a className="cad" href="/">Cadastrar</a>
+                
+                </span>
+                </span>
+                
+            </nav>
 
             
             <ImageGallery items={images}
